@@ -6,3 +6,6 @@ QUESTION 2: Is Gram-positive Bacteria more susceptible to Streptomycin or Neomyc
 
 QUESTION 3: Which antibiotic is most consistent?
 
+Student Website:
+
+http://students.washington.edu/jkinsfat/info474/assign1/Antibiotics-Triviz/
