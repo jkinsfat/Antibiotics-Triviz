@@ -1,0 +1,42 @@
+p {
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 2%;
+}
+
+div {
+	position: center;
+	padding-right: 15%;
+	padding-left: 15%;
+}
+
+footer {
+	background-color: #009999;
+ 	width: 100%;
+ 	padding-top: 1em;
+}
+
+header {
+	background-color: #009999;
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+
+}
+
+h1, h2, h3 {
+	padding-left: 10%;
+}
+
+h1 {
+	padding-top: 20px;
+}
+
+h3 {
+	padding-bottom: 10px;
+}
+
+#viz1 {
+	margin-top: 240px;
+}

@@ -5,11 +5,58 @@
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+	<link href="css/main.css" rel="stylesheet" />
 </head>
 <body>
-	<div id="viz1" style="width = 100%; height = 100%;"></div>
-	<div id="viz2" style="width = 100%; height = 100%;"></div>
-	<div id="viz3" style="width = 100%; height = 100%;"></div>
+	<header>
+		<h1>
+			Data Visualization
+		</h1>
+		<h2>
+			Assignment 1
+		<h2>
+		<h3>
+			Jason Kinsfather INFO 474 Spring 2016
+		<h3>
+	</header>
+	<div>
+	</div>
+	<div id="viz1" style="width = 100%; height = 100%;"></div><!-- visualization one -->
+	<p>
+		The first graphs aims to answer the question “Which bacteria have the highest resistance to Penicillin?” The necessary data to solve this problem is the quantitative value of minimum units of penicillin required to prevent bacteria from spawning. I chose to encode this value in the edge of the bars in a bar chart. According to Cleveland and McGill, data encoded in this manner is decoded by the elementary perceptual process that judges the position of the bar edge along a common scale (See Footer, pg 4). They argue that this elementary process is superior to all others because it is the most accurate (7). A bar chart enables the user to most accurately perceive the relevant data. Replacing the bars with circle markers where the bar tops are could also work, however, they would allow the user to perceive direction between the data points and extract a relationship between the data that doesn’t actually exist (the y axis is a false variable) (5). 
+	</p>
+	<p>
+		One kind of answer to this question requires that the user can identify specific bacterium. I choose a bar chart because, unlike other options, it allows me to display all 16 bacteria names and do so in a relatively uncluttered fashion. This question is also open to a more general answer of which categories of bacteria have higher resistance. I covered this possible meaning by dividing the bacteria up into Gram-Positive and Gram-Negative strains. The Gram-Positive bars are colored purple which is the color the bacteria are stained if they test positive on the Gram test. The other bars are pink, the color cells are stained that fail the test. Unfortunately, given that there is no way for me to create a color key for a basic bar chart with Plotly and all of the Gram-Positive bars cannot be seen, I had to add ‘Pos’ and ‘Neg’ labels to the bars.  They are crude, but they fail to detract from the plot by covering up other necessary data.
+	</p>
+	<p>
+		I chose to make the bar chart vertical for a couple of reasons: It is the most common way of structuring bar charts and is consistent with what the user knows and the names of the bacteria are so long that they would take up almost half of the area the chart does or be so small as to be inscrutable. The horizontal length of the chart is justified by the limitations of Plotly’s annotations, whose font-size cannot change and must be spaced to prevent visual grouping or overlap, and the readability of the bacteria names, which must also be sized and spaced to be comprehensible. The vertical height was chosen because it was the point at which Plotly displayed the 900 units line on the y-axis, which greatly aids the user in discerning the height of the bars between 800 and 900 units. Lastly, the background of the chart was colored a neutral unassuming gray to let the pink colored bars “pop” out. When the background is white, the shorter bars are quite difficult to make out.
+	</p>
+	<div id="viz2" style="width = 100%; height = 100%;"></div><!-- visualization two -->
+	<p>
+		The second visualization is designed to answer “Is Gram-positive Bacteria more susceptible to Streptomycin or Neomycin?” For this end I chose a Cartesian graph. The answer to this question is encoded in three ways: a bacterium’s quantitative susceptibility is encoded in its position along the x and y scales; The qualitative data, categorizing the bacteria as Gram-negative/ positive, is encoded in the color of the markers (purple/pink accordingly, see graph one’s justification for further detail); The relationship between the data points is further encoded by the direction the user can perceive between data points (5) and the groupings of similarly saturated markers by proximity. 
+	</p>
+	<p>
+		Although I could have made the markers different sizes instead of different saturations, enabling more accurate extraction of their data (7), the larger markers would obscure the data points closely clumped in the bottom corner. This visualization primarily requires the user to judge the position of the data points on a single scale, which is the most accurate perceptual task. While it is difficult to abstract the correct values of the data points, this is inconsequential to the question, which primarily desires to know the relationships between and not the values of the data points. 
+	</p>
+	<p>
+		For the axes, I chose to put Streptomycin on the x-axis and Neomycin on the y-axis for visibility reasons. If I swapped the axes the data clumped in the corner becomes more even more squashed together, further reducing the distinctness of the markers. I also chose to keep the light gray bars in the background to help the user judge the position of the data points furthest from the origin. 
+	</p>
+	<div id="viz3" style="width = 100%; height = 100%;"></div><!-- visualization three -->
+	<p>
+		The third and final visualization answers the question: “Which antibiotic is most consistent?”.  To answer this question requires some statistical data not directly provided within the data set. To measure how consistent a column of data is we need its coefficient of variation: the fraction of the mean that the data varies by. I encoded the coefficient in the edges of the bars of a bar chart. The value of the coefficient can be extracted most accurately (7) by the perception of the edges’ positions on the common scale of the y-axis(4). 
+	</p>
+	<p>
+		The color blue was chosen for the bar because it sets it apart from the chromatic symbolism in the earlier graphs on the page. Furthermore, the blue is clearly visible on the white background and its neutrality prevents it from becoming “visually intrusive”. The bars extend vertically for readability and consistency. If placed horizontally the labels would be difficult to read if placed vertically and would displace the graph if placed horizontally. The bars placed on the bottom is again consistent with what the user is accustomed to and is makes the graph as a whole similarly sized to the other two on the page. 
+	</p>
+	<p>
+		Lastly, I removed the gray lines in the plot for two reasons. One, they are irrelevant to answering the question which requires the relative and not exact values of the bars. Two, their existence provokes the user into perceiving the distance between the bars and the lines to extract data because the bars are closer to the line than the axis. This judgment of distance between bar and line involves the perception of length which is a less accurate elementary perceptual task than that of position on a common scale (7).
+	</p id="goawayfooter">
+
+	<footer>
+		<p>
+			All page numbers reference: Cleveland, W. S., & Mcgill, R. (1984). Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods.Journal of the American Statistical Association, 79(387), 531-554. doi:10.1080/01621459.1984.10478080
+		</p>
+	</footer>
 	<script type="text/javascript" src="js/triviz.js"></script>
 </body>
 </html>

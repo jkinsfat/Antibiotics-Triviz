@@ -87,7 +87,8 @@ $(function() {
             annotations: directLabels,
             height: 550,
             margin: {
-                b: 120
+                b: 120,
+                r: 120
             },
             yaxis: {
                 title: 'Penicilin (Units)'
@@ -101,16 +102,6 @@ $(function() {
         //Data for Second Visualization
         //Data for scatterplot sorted by Gram-negativ/positive rows
         var data2 = [{
-            name: "Gram Positive",
-            x: strepPos,
-            y: neoPos,
-            type: 'scatter',
-            mode: 'markers',
-            marker: {
-                color: 'rgb(153, 0, 204)',
-                size: 8
-            }
-        },{
             name: "Gram Negative",
             x: strepNeg,
             y: neoNeg,
@@ -120,11 +111,21 @@ $(function() {
                 color: 'rgb(255, 128, 223)',
                 size: 8
             }
+        },{
+            name: "Gram Positive",
+            x: strepPos,
+            y: neoPos,
+            type: 'scatter',
+            mode: 'markers',
+            marker: {
+                color: 'rgb(153, 0, 204)',
+                size: 8
+            }
         }];
 
         //Layout for visualization two
         var layout2 = {
-            title: 'Resistance of Gram-Positive and Gram-Negative Bacteria to Antibiotics',
+            title: 'Efficacy of Antibiotics on Gram-Positive and Gram-Negative Bacteria',
             xaxis: {
                 title: 'MIC of Streptomycin (Units)'
             },
@@ -178,7 +179,8 @@ $(function() {
         var layout3 = {
             title: 'Consistency of Minimum Inhibitory Concentration of Antibiotics for Bacteria',
             yaxis: {
-                title: 'Coefficient of Variation'
+                title: 'Coefficient of Variation',
+                showgrid: false
             },
             xaxis: {
                 title: 'Antibiotic'
@@ -186,6 +188,6 @@ $(function() {
         }
 
         //Creates Visualization three
-        Plotly.newPlot('viz3', data3, layout3), {staticPlot: true};
+        Plotly.newPlot('viz3', data3, layout3, {staticPlot: true});
     });
 });
